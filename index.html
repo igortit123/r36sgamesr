@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#07080f">
+<title>RETRO R36</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&display=swap" rel="stylesheet">
+<style>
+@property --c{syntax:'<color>';inherits:true;initial-value:#6c5ce7}
+:root{--px:'Press Start 2P',ui-monospace,monospace;--ti:'Russo One','Arial Black',system-ui,sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+html,body{margin:0;height:100%;background:#07080f;overflow:hidden;font-family:system-ui,sans-serif;color:#fff}
+#ui{--c:#6c5ce7;transition:--c .6s;position:fixed;inset:0;display:flex;flex-direction:column;overflow:hidden;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);background:color-mix(in srgb,var(--c) 14%,#07080f)}
+#bgi{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(34px) brightness(.5) saturate(1.5);opacity:0;transition:opacity .6s}
+.bl{position:absolute;border-radius:50%;filter:blur(70px);background:var(--c);opacity:.45;animation:fl 16s ease-in-out infinite alternate}
+.b1{width:55vh;height:55vh;left:-12vh;top:-14vh}.b2{width:65vh;height:65vh;right:-16vh;bottom:-24vh;opacity:.32;animation-delay:-8s}
+@keyframes fl{to{transform:translate(9vw,6vh) scale(1.25)}}
+#ui::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle,#fff1 1px,transparent 1.5px) 0 0/22px 22px,radial-gradient(transparent 50%,#000b)}
+#tb{position:relative;z-index:5;height:50px;flex:none;display:flex;align-items:center;gap:8px;padding:0 14px}
+.lg{font:400 10px var(--px);letter-spacing:1px;white-space:nowrap;text-shadow:0 0 12px var(--c);margin-right:6px}.lg b{color:var(--c);filter:brightness(1.6);font-weight:400}
+#chs{flex:1;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;min-width:0;mask-image:linear-gradient(90deg,#000 92%,transparent)}#chs::-webkit-scrollbar{display:none}
+.ch{flex:none;border:1px solid #ffffff22;border-radius:20px;padding:7px 11px;background:#ffffff12;color:#fff;font:400 8px var(--px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.ch i{font-style:normal;opacity:.55;margin-left:5px}.ch.on{background:var(--c);color:#000b;border-color:transparent;box-shadow:0 0 16px var(--c)}
+.tbn{position:relative;flex:none;border:0;border-radius:12px;padding:10px 13px;background:#ffffff1c;color:#fff;font:400 8px var(--px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.tbn.pr{background:linear-gradient(135deg,var(--c),color-mix(in srgb,var(--c) 55%,#fff));color:#000b;box-shadow:0 0 18px color-mix(in srgb,var(--c) 70%,transparent)}
+.dot{position:absolute;top:-4px;right:-4px;width:12px;height:12px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 2px #07080f}
+#hero{position:relative;z-index:2;flex:1;min-height:0;display:flex;align-items:center;justify-content:space-between;padding:0 5vw 0 6vw;gap:3vw}
+#hl{flex:1;min-width:0}
+#sbd{display:inline-block;padding:6px 10px;border-radius:8px;background:var(--c);color:#000b;font:400 8px var(--px);margin-bottom:12px;box-shadow:0 0 16px var(--c)}
+#ti{margin:0;font:400 clamp(20px,8.4vh,46px)/1.05 var(--ti);text-shadow:0 4px 24px #000a,0 0 30px color-mix(in srgb,var(--c) 60%,transparent);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#mt{margin:10px 0 14px;font:400 8px/1.8 var(--px);color:#d4d8ff}
+#ac{display:flex;gap:8px;flex-wrap:wrap}
+.pb{border:0;border-radius:14px;padding:13px 22px;background:#fff;color:#000;font:400 11px var(--px);box-shadow:0 0 28px color-mix(in srgb,var(--c) 80%,transparent),0 6px 0 #aaa;transition:transform .08s}.pb:active{transform:translateY(4px);box-shadow:0 2px 0 #aaa}
+.sb{border:1px solid #ffffff2a;border-radius:14px;padding:12px 14px;background:#ffffff14;color:#fff;font:400 8px var(--px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#hr{flex:none;height:min(34vh,230px);display:flex;align-items:center}
+#hr svg{height:100%;filter:drop-shadow(0 16px 22px #000c) drop-shadow(0 0 30px color-mix(in srgb,var(--c) 70%,transparent));animation:fb 3s ease-in-out infinite;transform:rotate(6deg)}
+@keyframes fb{50%{transform:rotate(6deg) translateY(-9px)}}
+#shelf{--ch:min(33vh,210px);position:relative;z-index:3;flex:none;height:calc(var(--ch)*1.34);display:flex;align-items:center;gap:calc(var(--ch)*.12);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 calc(50% - var(--ch)*.375)}
+#shelf::-webkit-scrollbar{display:none}
+.cd{position:relative;flex:none;width:calc(var(--ch)*.75);height:var(--ch);scroll-snap-align:center;border-radius:14px;overflow:hidden;background:#111;transform:scale(.86);opacity:.6;transition:transform .3s cubic-bezier(.2,.9,.3,1.3),opacity .3s,box-shadow .3s;box-shadow:0 8px 18px #0009}
+.cd.f{transform:scale(1.16) translateY(-4px);opacity:1;box-shadow:0 0 0 2px #fffc,0 0 36px var(--cc),0 16px 26px #000c}
+.cd img{width:100%;height:100%;object-fit:cover;display:block}
+.cd::after{content:'';position:absolute;inset:0;background:linear-gradient(125deg,#fff4,transparent 38%);pointer-events:none}
+.art{position:absolute;inset:0;background:linear-gradient(160deg,color-mix(in srgb,var(--cc) 65%,#fff),var(--cc) 38%,color-mix(in srgb,var(--cc) 35%,#000));display:flex;align-items:center;justify-content:center}
+.art svg{width:62%;opacity:.35;transform:rotate(-12deg)}
+.art span{position:absolute;left:0;right:0;bottom:0;padding:22px 9px 9px;font:400 clamp(9px,3vh,13px)/1.2 var(--ti);background:linear-gradient(transparent,#000d);text-shadow:0 2px 4px #000;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cd .bd{position:absolute;top:7px;left:7px;z-index:2;padding:4px 6px;border-radius:6px;background:#000b;font:400 6px var(--px);color:#fff}
+.gh{border:2px dashed #ffffff40;background:#ffffff0a;display:flex;align-items:center;justify-content:center;font-size:30px;color:#ffffff80}
+#ts{position:fixed;z-index:60;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translate(-50%,30px);opacity:0;padding:11px 16px;border-radius:14px;background:#000d;border:1px solid #fff3;font:400 8px/1.8 var(--px);text-align:center;transition:.3s;pointer-events:none;max-width:90vw}#ts.on{transform:translate(-50%,0);opacity:1}
+#md{position:fixed;inset:0;z-index:50;background:#000a;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:14px}#md.on{display:flex}
+.pn{width:min(560px,100%);max-height:100%;overflow:auto;background:linear-gradient(#1b1e33,#10121f);border:1px solid #ffffff2a;border-radius:20px;padding:18px;box-shadow:0 20px 60px #000}
+.pn h3{margin:0 0 12px;font:400 11px var(--px)}.pn p{font:400 7px/2 var(--px);color:#aab0e0;margin:10px 0}
+.br{display:flex;align-items:center;gap:12px;padding:10px;margin-bottom:8px;border-radius:12px;background:#ffffff0f;font:400 8px/1.8 var(--px)}.br div{flex:1;min-width:0}.br small{display:block;font-size:6px;color:#9aa0d0}.ok{color:#5df29a!important}.bad{color:#ff7675!important}
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.sg button{border:0;border-radius:12px;padding:12px 6px;background:var(--cc);color:#000c;font:400 8px var(--px)}
+#rot{position:fixed;inset:0;z-index:99;background:#07080f;display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;font:400 10px/2 var(--px);padding:20px}
+#rot span{font-size:60px;animation:rt 2s ease-in-out infinite}@keyframes rt{50%{transform:rotate(-90deg)}}
+@media(orientation:portrait){#rot{display:flex}}
+.rb{position:relative;flex:none;width:38px;height:38px;border-radius:50%;border:1px solid #ffffff30;background:#ffffff18;color:#fff;font:400 15px var(--px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform .1s}
+#bb{font-size:6px}.rb:active{transform:scale(.9)}.rb.pr{background:#fff;color:#000;box-shadow:0 0 18px color-mix(in srgb,var(--c) 80%,transparent)}
+#clk,#bat{flex:none;font:400 9px var(--px);color:#e8eaff;margin-left:4px}
+.ch{background:none!important;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;font-size:8px;padding:8px 9px;box-shadow:none!important;backdrop-filter:none!important;color:#ffffffa0}
+.ch.on{color:#fff;border-bottom-color:#fff!important;text-shadow:0 0 14px var(--c)}
+@keyframes ring{50%{box-shadow:0 0 0 3px #fff,0 0 46px var(--cc),0 16px 26px #000c}}
+.cd.f{animation:ring 1.6s ease-in-out infinite}
+@keyframes up{from{opacity:0;transform:translateY(34px) scale(.8)}}
+.cd{animation:up .55s cubic-bezier(.2,.9,.3,1.2) backwards}
+@keyframes hi{from{opacity:0;transform:translateX(-16px)}}
+#hl>*{animation:hi .45s backwards}#hl>*:nth-child(2){animation-delay:.05s}#hl>*:nth-child(3){animation-delay:.1s}#hl>*:nth-child(4){animation-delay:.15s}
+#bgi{filter:blur(22px) brightness(.55) saturate(1.5)}
+#hr{height:min(40vh,260px)}
+.bar{height:6px;border-radius:3px;background:#ffffff22;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#6c5ce7,#e84393)}
+</style></head><body>
+<div id="ui">
+ <div id="bgi"></div><div class="bl b1"></div><div class="bl b2"></div>
+ <div id="tb"><span class="lg">RETRO<b>·</b>R36</span><div id="chs"></div><button class="rb pr" id="ad" title="Добавить">＋</button><button class="rb" id="bb" title="BIOS">BIOS</button><button class="rb" id="sg" title="Хранилище">⚙</button><button class="rb" id="fs" title="Во весь экран">⛶</button><span id="clk"></span><span id="bat"></span></div>
+ <div id="hero"><div id="hl"></div><div id="hr"></div></div>
+ <div id="shelf"></div>
+</div>
+<div id="md"><div class="pn" id="pn"></div></div><div id="ts"></div>
+<div id="rot"><span>📱</span>ПОВЕРНИ ТЕЛЕФОН<br>ГОРИЗОНТАЛЬНО</div>
+<input type="file" id="f" multiple hidden><input type="file" id="fb" hidden><input type="file" id="fc" accept="image/*" hidden>
+<script>
+const $=id=>document.getElementById(id);
+const SYS=[
+{id:'nes',n:'NES',s:'NES',c:'#ff5e57',t:'c'},{id:'snes',n:'Super Nintendo',s:'SNES',c:'#a29bfe',t:'c'},
+{id:'gb',n:'Game Boy / Color',s:'GB',c:'#2ecc71',t:'c'},{id:'gba',n:'Game Boy Advance',s:'GBA',c:'#c56cf0',t:'c',bios:'opt'},
+{id:'nds',n:'Nintendo DS',s:'NDS',c:'#3498db',t:'c'},{id:'n64',n:'Nintendo 64',s:'N64',c:'#ff9f43',t:'c'},
+{id:'vb',n:'Virtual Boy',s:'VB',c:'#ff3838',t:'c'},
+{id:'psx',n:'PlayStation',s:'PS1',c:'#74b9ff',t:'d',bios:'req'},
+{id:'md',n:'Mega Drive',s:'MD',c:'#4b7bec',t:'c'},{id:'scd',n:'Sega CD',s:'SCD',c:'#0984e3',t:'d',bios:'req'},
+{id:'32x',n:'Sega 32X',s:'32X',c:'#e17055',t:'c'},{id:'sat',n:'Sega Saturn',s:'SAT',c:'#00b894',t:'d',bios:'opt'},
+{id:'sms',n:'Master System',s:'SMS',c:'#fd79a8',t:'c'},{id:'gg',n:'Game Gear',s:'GG',c:'#778beb',t:'c'},
+{id:'a26',n:'Atari 2600',s:'2600',c:'#f6b93b',t:'c'},{id:'a52',n:'Atari 5200',s:'5200',c:'#e84118',t:'c',bios:'req'},
+{id:'a78',n:'Atari 7800',s:'7800',c:'#fbc531',t:'c',bios:'opt'},{id:'lynx',n:'Atari Lynx',s:'LYNX',c:'#e1b12c',t:'c',bios:'opt'},
+{id:'jag',n:'Atari Jaguar',s:'JAG',c:'#c23616',t:'c'},{id:'pce',n:'PC Engine',s:'PCE',c:'#fab1a0',t:'c'},
+{id:'ngp',n:'Neo Geo Pocket',s:'NGP',c:'#487eb0',t:'c'},{id:'ws',n:'WonderSwan',s:'WS',c:'#9c88ff',t:'c'},
+{id:'3do',n:'3DO',s:'3DO',c:'#f5cd79',t:'d',bios:'req'},{id:'col',n:'ColecoVision',s:'COL',c:'#40739e',t:'c',bios:'req'},
+{id:'arc',n:'Arcade',s:'ARC',c:'#55efc4',t:'c'}];
+const BN={psx:'scph1001.bin',scd:'bios_CD_U.bin',sat:'saturn_bios.bin','3do':'panafz10.bin',a52:'5200.rom',a78:'7800 BIOS.rom',lynx:'lynxboot.img',col:'colecovision.rom',gba:'gba_bios.bin'};
+const SM=Object.fromEntries(SYS.map(s=>[s.id,s]));
+const EXT={nes:'nes',sfc:'snes',smc:'snes',gb:'gb',gbc:'gb',gba:'gba',nds:'nds',z64:'n64',n64:'n64',v64:'n64',md:'md',gen:'md',smd:'md',sms:'sms',gg:'gg',a26:'a26',pce:'pce',cue:'psx',chd:'psx',pbp:'psx',img:'psx',iso:'psx',ccd:'psx',mdf:'psx',a52:'a52',a78:'a78',lnx:'lynx',j64:'jag',jag:'jag',ngp:'ngp',ngc:'ngp',ws:'ws',wsc:'ws',vb:'vb',vboy:'vb',col:'col',cv:'col','32x':'32x'};
+function icon(s){const c=s.c,u='g'+s.id,F=`font-family="Press Start 2P,monospace"`,G=`<defs><linearGradient id="${u}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient></defs>`;
+return s.t=='d'?`<svg viewBox="0 0 120 120">${G}<circle cx="60" cy="60" r="56" fill="${c}"/><circle cx="60" cy="60" r="56" fill="url(#${u})"/><circle cx="60" cy="60" r="38" fill="none" stroke="#0004" stroke-width="2"/><circle cx="60" cy="60" r="20" fill="#0b0c14"/><circle cx="60" cy="60" r="7" fill="${c}"/><text x="60" y="100" text-anchor="middle" font-size="11" fill="#000" fill-opacity=".7" ${F}>${s.s}</text></svg>`
+:`<svg viewBox="0 0 120 140">${G}<path d="M12 8h96v92l-14 32H26L12 100z" fill="${c}"/><path d="M12 8h96v92l-14 32H26L12 100z" fill="url(#${u})"/><rect x="24" y="22" width="72" height="58" rx="6" fill="#0b0c14" fill-opacity=".88"/><text x="60" y="58" text-anchor="middle" font-size="15" fill="#fff" ${F}>${s.s}</text><rect x="22" y="88" width="76" height="3" fill="#0004"/><rect x="34" y="106" width="52" height="20" fill="#0009"/>${[0,1,2,3,4,5].map(i=>`<rect x="${38+i*8}" y="110" width="3" height="12" fill="#d4af37"/>`).join('')}</svg>`}
+let ac;function beep(f,t=.05){try{ac=ac||new AudioContext();const o=ac.createOscillator(),g=ac.createGain(),n=ac.currentTime;o.type='square';o.frequency.setValueAtTime(f,n);o.frequency.exponentialRampToValueAtTime(f*1.5,n+t);g.gain.setValueAtTime(.035,n);g.gain.exponentialRampToValueAtTime(.001,n+t);o.connect(g);g.connect(ac.destination);o.start();o.stop(n+t)}catch(e){}}
+function toast(t,keep){const e=$('ts');e.innerHTML=t;e.classList.add('on');clearTimeout(toast.t);if(!keep)toast.t=setTimeout(()=>e.classList.remove('on'),3600)}
+// ---------- БД
+let db;const req=indexedDB.open('retro36',2);
+req.onupgradeneeded=e=>{const d=e.target.result;if(!d.objectStoreNames.contains('games'))d.createObjectStore('games',{keyPath:'id',autoIncrement:true}).createIndex('sys','sys');if(!d.objectStoreNames.contains('bios'))d.createObjectStore('bios');if(!d.objectStoreNames.contains('covers'))d.createObjectStore('covers')};
+const tx=(s,m='readonly')=>db.transaction(s,m).objectStore(s);
+const P=r=>new Promise((res,rej)=>{r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error||new Error('db'))});
+// ---------- определение системы
+async function zipNames(file){try{const tail=await file.slice(Math.max(0,file.size-65557)).arrayBuffer(),v=new DataView(tail);let e=-1;for(let i=tail.byteLength-22;i>=0;i--)if(v.getUint32(i,true)==0x06054b50){e=i;break}
+ if(e<0)return[];const n=v.getUint16(e+10,true),sz=v.getUint32(e+12,true),off=v.getUint32(e+16,true),cd=await file.slice(off,off+sz).arrayBuffer(),d=new DataView(cd),u=new Uint8Array(cd),out=[];let p=0;
+ for(let i=0;i<n&&p+46<=cd.byteLength;i++){if(d.getUint32(p,true)!=0x02014b50)break;const nl=d.getUint16(p+28,true),xl=d.getUint16(p+30,true),cl=d.getUint16(p+32,true);out.push(new TextDecoder().decode(u.subarray(p+46,p+46+nl)));p+=46+nl+xl+cl}return out}catch(e){return[]}}
+function biosKind(f){const n=f.name,z=f.size;
+ if(z==131072&&/bios_cd_[uej]/i.test(n))return'scd';
+ if(z==524288&&/saturn|sega_101|mpr-?1\d{4}/i.test(n))return'sat';
+ if(z==524288&&/scph|bios|psx|ps-?\d|ps_/i.test(n))return'psx';
+ if(z==16384&&/gba|bios/i.test(n))return'gba';
+ if(z==1048576&&/panafz|3do/i.test(n))return'3do';
+ if(z<=8192&&/5200/i.test(n))return'a52';
+ if(z<=8192&&/7800/i.test(n))return'a78';
+ if(z<=1024&&/lynx/i.test(n))return'lynx';
+ if(z==8192&&/coleco/i.test(n))return'col';
+ return null}
+const rd=async(f,o,l)=>new TextDecoder('latin1').decode(await f.slice(o,o+l).arrayBuffer());
+async function detect(f){const ext=f.name.split('.').pop().toLowerCase();
+ if(ext=='zip'){const nm=await zipNames(f);for(const n of nm){const x=n.split('.').pop().toLowerCase();if(EXT[x])return EXT[x]}return nm.length?'arc':null}
+ if(['iso','bin','img'].includes(ext)){try{const t=await rd(f,0,48);
+  if(/SEGADISCSYSTEM|SEGA DISC/.test(t))return'scd';if(/SEGASATURN/.test(t))return'sat';if(t.startsWith('\x01ZZZZZ'))return'3do';
+  if(f.size<=8388608&&/32X/.test(await rd(f,0x100,0x20)))return'32x'}catch(e){}}
+ if(ext=='bin'){if(f.size<=131072)return'a26';if(f.size<=8388608)return'md';return'psx'}
+ return EXT[ext]||null}
+// ---------- состояние
+let all=[],list=[],flt='all',fi=-1,urls={},bios={};
+async function load(){all=(await P(tx('games').getAll())).filter(g=>SM[g.sys]).sort((a,b)=>(b.added||0)-(a.added||0));
+ for(const g of all)if(!(g.id in urls)){const c=await P(tx('covers').get(g.id));urls[g.id]=c?URL.createObjectURL(c):null}
+ for(const s of SYS)if(s.bios)bios[s.id]=(await P(tx('bios').get(s.id)))||null;render()}
+const title=n=>{const b=n.replace(/\.[^.]+$/,'');return b.replace(/[\[(].*?[\])]/g,'').replace(/[_.]+/g,' ').replace(/\s+/g,' ').trim()||b};
+function render(){
+ const cnt={};all.forEach(g=>cnt[g.sys]=(cnt[g.sys]||0)+1);
+ if(flt!='all'&&!cnt[flt])flt='all';
+ $('chs').innerHTML=`<button class="ch ${flt=='all'?'on':''}" data-f="all">ВСЕ<i>${all.length}</i></button>`+SYS.filter(s=>cnt[s.id]).map(s=>`<button class="ch ${flt==s.id?'on':''}" data-f="${s.id}">${s.s}<i>${cnt[s.id]}</i></button>`).join('');
+ $('chs').querySelectorAll('.ch').forEach(b=>b.onclick=()=>{flt=b.dataset.f;beep(500);fi=-1;render();$('shelf').scrollLeft=0});
+ list=all.filter(g=>flt=='all'||g.sys==flt);
+ const need=all.some(g=>SM[g.sys].bios=='req'&&!bios[g.sys]);$('bb').innerHTML='BIOS'+(need?'<span class="dot"></span>':'');
+ const S=$('shelf');S.innerHTML='';
+ if(!list.length){for(let i=0;i<5;i++){const d=document.createElement('div');d.className='cd gh'+(i==2?' f':'');d.textContent=i==2?'＋':'';d.onclick=()=>$('f').click();S.appendChild(d)}
+  $('hl').innerHTML=`<span id="sbd">ПУСТО</span><h1 id="ti">ДОБАВЬ СВОИ ИГРЫ</h1><div id="mt">Просто выбери файлы игр — система определится сама.<br>BIOS для PS1 тоже определится и подключится сам.</div><div id="ac"><button class="pb" id="p0">＋ ДОБАВИТЬ</button></div>`;
+  $('p0').onclick=()=>$('f').click();$('hr').innerHTML='';$('ui').style.setProperty('--c','#6c5ce7');$('bgi').style.opacity=0;fi=-1;return}
+ list.forEach((g,i)=>{const s=SM[g.sys],d=document.createElement('div');d.className='cd';d.style.animationDelay=(i*45)+'ms';d.style.setProperty('--cc',s.c);
+  d.innerHTML=(urls[g.id]?`<img src="${urls[g.id]}">`:`<div class="art">${icon(s)}<span></span></div>`)+`<span class="bd">${s.s}</span>`;
+  const sp=d.querySelector('.art span');if(sp)sp.textContent=title(g.name);
+  d.onclick=()=>{if(i==fi)play();else d.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'})};S.appendChild(d)});
+ const keep=fi;fi=-1;setF(Math.min(Math.max(keep,0),list.length-1),true);S.children[fi]?.scrollIntoView({inline:'center',block:'nearest'})}
+function setF(i,quiet){if(i==fi||!list[i])return;fi=i;if(!quiet)beep(540,.04);const g=list[i],s=SM[g.sys];
+ [...$('shelf').children].forEach((e,k)=>e.classList.toggle('f',k==i));
+ $('ui').style.setProperty('--c',s.c);const b=$('bgi');if(urls[g.id]){b.style.backgroundImage=`url(${urls[g.id]})`;b.style.opacity=1}else b.style.opacity=0;
+ const warn=s.bios=='req'&&!bios[g.sys];
+ $('hl').innerHTML=`<span id="sbd">${s.n.toUpperCase()}</span><h1 id="ti"></h1><div id="mt">${(g.size/1048576).toFixed(1)} MB · ${g.name.split('.').pop().toUpperCase()}${warn?'<br><span style="color:#ff9f9f">⚠ НУЖЕН BIOS — нажми кнопку BIOS</span>':''}</div><div id="ac"><button class="pb" id="p1">▶ ИГРАТЬ</button><button class="sb" id="a1">🖼 ОБЛОЖКА</button><button class="sb" id="a2">✎ СИСТЕМА</button><button class="sb" id="a3">🗑</button></div>`;
+ $('ti').textContent=title(g.name);$('hr').innerHTML=icon(s);
+ $('p1').onclick=play;$('a1').onclick=()=>$('fc').click();$('a3').onclick=del;
+ $('a2').onclick=async()=>{const x=await pick('Выбери систему для «'+title(g.name)+'»');if(x){const r=await P(tx('games').get(g.id));r.sys=x;await P(tx('games','readwrite').put(r));await load()}}}
+let st;$('shelf').addEventListener('scroll',()=>{clearTimeout(st);st=setTimeout(()=>{const s=$('shelf'),m=s.scrollLeft+s.clientWidth/2;let b=0,d=1e9;[...s.children].forEach((e,i)=>{const x=Math.abs(e.offsetLeft+e.offsetWidth/2-m);if(x<d){d=x;b=i}});if(list.length)setF(b)},60)});
+function play(){const g=list[fi];if(!g)return;if(SM[g.sys].bios=='req'&&!bios[g.sys]){beep(250,.15);showBios('Для '+SM[g.sys].n+' нужен BIOS');return}
+ beep(880,.2);try{localStorage.setItem('last',JSON.stringify({id:g.id}))}catch(e){}setTimeout(()=>location.href='play.html?id='+g.id,200)}
+async function del(){const g=list[fi];if(g&&confirm('Удалить «'+title(g.name)+'»?')){await P(tx('games','readwrite').delete(g.id));await P(tx('covers','readwrite').delete(g.id));fi=Math.max(0,fi-1);await load()}}
+// ---------- модалки
+function modal(h){$('pn').innerHTML=h;$('md').classList.add('on')}
+$('md').onclick=e=>{if(e.target==$('md'))$('md').classList.remove('on')};
+function pick(t){return new Promise(res=>{modal(`<h3>${t}</h3><div class="sg">${SYS.map(s=>`<button style="--cc:${s.c}" data-i="${s.id}">${s.n.toUpperCase()}</button>`).join('')}</div>`);
+ $('md').onclick=e=>{if(e.target==$('md')){$('md').classList.remove('on');res(null)}};
+ $('pn').querySelectorAll('button').forEach(b=>b.onclick=()=>{$('md').classList.remove('on');res(b.dataset.i)})})}
+function showBios(msg){const L=SYS.filter(s=>s.bios).sort((a,b)=>(a.bios=='req'?0:1)-(b.bios=='req'?0:1));
+ const row=s=>{const f=bios[s.id],r=s.bios=='req';return `<div class="br"><span style="font-size:18px">${f?'✅':r?'❗':'➖'}</span><div>${s.n}<small class="${f?'ok':r?'bad':''}">${f?(f.name||'загружен'):'не загружен'}</small><small>${r?'Обязателен':'Необязателен'} · например ${BN[s.id]}</small></div>${f?`<button class="sb" data-d="${s.id}">🗑</button>`:''}</div>`};
+ modal(`<h3>BIOS</h3>${msg?`<p style="color:#ffb4b4">${msg}</p>`:''}${L.map(row).join('')}<p>Файл BIOS можно просто добавить кнопкой «＋» вместе с играми — он определится сам. Остальным системам BIOS не нужен.</p><div id="ac"><button class="pb" id="pf">ВЫБРАТЬ ФАЙЛ BIOS</button></div>`);
+ $('pf').onclick=()=>$('fb').click();$('pn').querySelectorAll('[data-d]').forEach(b=>b.onclick=async()=>{await P(tx('bios','readwrite').delete(b.dataset.d));await load();showBios()})}
+$('bb').onclick=()=>showBios();
+async function showSet(){let e={},per=false;try{e=await navigator.storage.estimate()}catch(_){}try{per=await navigator.storage.persisted()}catch(_){}
+ const u=e.usage||0,q=e.quota||0,gb=x=>(x/1073741824).toFixed(2)+' ГБ';
+ modal(`<h3>ХРАНИЛИЩЕ</h3><div class="br"><div>Занято: ${gb(u)}${q?' из '+gb(q):''}<small>Игры и BIOS хранятся только в браузере этого телефона</small><div class="bar"><i style="width:${q?Math.min(100,u/q*100):0}%"></i></div></div></div><div class="br"><span style="font-size:20px">${per?'🔒':'⚠️'}</span><div>Защита от очистки<small class="${per?'ok':'bad'}">${per?'Включена':'Выключена — браузер может удалить игры'}</small></div>${per?'':'<button class="sb" id="pp">ВКЛЮЧИТЬ</button>'}</div><p>БОЛЬШИЕ ИГРЫ: эмулятор держит файл целиком в оперативной памяти телефона. Надёжно идут образы до 500–700 МБ. PS1 лучше сжать в .chd (в 2–3 раза меньше). PS2 (GTA Vice City и т.п.) в браузере запустить нельзя.</p>`);
+ if(!per)$('pp').onclick=async()=>{let ok=false;try{ok=await navigator.storage.persist()}catch(_){}toast(ok?'Защита включена 🔒':'Браузер не разрешил');showSet()}}
+$('sg').onclick=showSet;
+function clock(){$('clk').textContent=new Date().toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit'})}clock();setInterval(clock,15000);
+if(navigator.getBattery)navigator.getBattery().then(b=>{const u=()=>$('bat').textContent=Math.round(b.level*100)+'%'+(b.charging?'⚡':'');u();b.onlevelchange=b.onchargingchange=u}).catch(()=>{});
+// ---------- добавление
+async function addFiles(files){try{navigator.storage?.persist?.()}catch(_){}
+ let g=0,b=[],fail=[],n=0;const gb=x=>x>=1073741824?(x/1073741824).toFixed(2)+' ГБ':Math.round(x/1048576)+' МБ';
+ for(const f of files){n++;
+  try{const k=biosKind(f);
+   if(k){await P(tx('bios','readwrite').put(f,k));b.push(SM[k].s);continue}
+   let s=await detect(f);if(!s){s=await pick('Какая это система? «'+title(f.name)+'»');if(!s)continue}
+   if(f.size>1.5e9&&!confirm('«'+title(f.name)+'» весит '+gb(f.size)+'. Браузер на телефоне, скорее всего, не сможет её запустить (эмулятору нужно держать файл в памяти). PS2 и PSP не поддерживаются вообще. Всё равно сохранить?'))continue;
+   if(f.size>3e7)toast(`Сохраняю ${n}/${files.length}: ${title(f.name)}<br>${gb(f.size)} — не закрывай страницу…`,true);
+   await P(tx('games','readwrite').add({sys:s,name:f.name,blob:f,size:f.size,added:Date.now()}));g++;
+   if(/\.cue$/i.test(f.name))toast('⚠ .cue нужен вместе с .bin — лучше один .bin/.iso/.chd или zip')
+  }catch(e){fail.push(f.name)}}
+ await load();beep(900,.15);
+ const m=[];if(g)m.push(`Добавлено игр: ${g}`);if(b.length)m.push(`BIOS найден: ${b.join(', ')} ✓`);
+ if(fail.length)m.push(`⚠ Не удалось сохранить: ${fail.map(title).join(', ')}<br>Скорее всего, не хватает места в браузере (⚙)`);
+ if(m.length)toast(m.join('<br>'));else $('ts').classList.remove('on')}
+$('f').onchange=async e=>{const fs=[...e.target.files];e.target.value='';await addFiles(fs)};
+$('ad').onclick=()=>$('f').click();
+$('fb').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;let k=biosKind(f);if(!k){k=await pick('Для какой системы этот BIOS?');if(!k)return}await P(tx('bios','readwrite').put(f,k));await load();showBios();toast('BIOS сохранён ✓')};
+$('fc').onchange=async e=>{const f=e.target.files[0];e.target.value='';const g=list[fi];if(f&&g){await P(tx('covers','readwrite').put(f,g.id));urls[g.id]=URL.createObjectURL(f);render()}};
+addEventListener('dragover',e=>e.preventDefault());addEventListener('drop',e=>{e.preventDefault();if(e.dataTransfer.files.length)addFiles([...e.dataTransfer.files])});
+addEventListener('keydown',e=>{if(e.key=='ArrowRight')$('shelf').children[fi+1]?.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});if(e.key=='ArrowLeft')$('shelf').children[fi-1]?.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});if(e.key=='Enter')play()});
+$('fs').onclick=()=>{const d=document.documentElement;(d.requestFullscreen?d.requestFullscreen():Promise.reject()).then(()=>screen.orientation?.lock?.('landscape')).catch(()=>{})};
+req.onsuccess=()=>{db=req.result;load()};
+</script></body></html>
